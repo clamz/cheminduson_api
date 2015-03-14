@@ -1,0 +1,3 @@
+cds_api_index:
+    pattern: /
+    defaults: { _controller: CDSApiBundle:Main:index }

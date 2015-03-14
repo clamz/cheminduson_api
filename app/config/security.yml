@@ -2,11 +2,15 @@ security:
     providers:
         in_memory:
             memory: ~
-
+        cds_security_api_key_user_provider:
+            id: cds_security_api_key_user_provider
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt|error)|css|images|js)/
             security: false
-
-        default:
-            anonymous: ~
+        api_area:
+            pattern: ^/
+            stateless: true
+            simple_preauth:
+                authenticator: cds_security_apikey_authenticator
+            

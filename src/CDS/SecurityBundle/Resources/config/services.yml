@@ -1,0 +1,6 @@
+services:
+  cds_security_api_key_user_provider:
+    class: CDS\SecurityBundle\Security\ApiKeyUserProvider
+  cds_security_apikey_authenticator:
+    class:     CDS\SecurityBundle\Security\ApiKeyAuthenticator
+    arguments: ["@cds_security_api_key_user_provider"]
